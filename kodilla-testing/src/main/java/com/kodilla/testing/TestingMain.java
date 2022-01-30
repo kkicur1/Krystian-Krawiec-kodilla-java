@@ -33,9 +33,5 @@ public class TestingMain {
             System.out.println("Error!");
         }
         System.out.println("Test - pierwszy test jednostkowy:");
-
-
-
-
     }
 }
