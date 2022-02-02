@@ -2,6 +2,8 @@ package com.kodilla.testing.collection;
 
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CollectionTestSuite {
@@ -22,20 +24,21 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator oddNumbersExterminator=new OddNumbersExterminator();
         //When
-        List<Integer> result= oddNumbersExterminator.exterminate(null);
+        List<Integer> result= oddNumbersExterminator.exterminate(new ArrayList<>());
         System.out.println("testing"+result);
         //Then
-        Assertions.assertEquals(null,result);
+        Assertions.assertTrue(result.isEmpty());
     }
+
     @DisplayName("when you put list to method exterminate with odd and even numbers"+ "then it should return list with even numbers")
     @Test
     void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator oddNumbersExterminator=new OddNumbersExterminator();
-        //When
-        List<Integer> result= oddNumbersExterminator.exterminate(1,2,3,4,5,6,7);
+
+        List<Integer> result = oddNumbersExterminator.exterminate(Arrays.asList(1,2,3,4,5,6,7));
         System.out.println("testing"+result);
         //Then
-        Assertions.assertEquals(2,4,6,result);
+        Assertions.assertEquals(Arrays.asList(2,4,6), result);
     }
 }

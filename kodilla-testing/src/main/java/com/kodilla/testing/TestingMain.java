@@ -16,9 +16,9 @@ public class TestingMain {
             System.out.println("Error!");
         }
 
-        Calculator calculator = new Calculator(7,3);
-        int sum = calculator.add();
-        int substraction = calculator.substract();
+        Calculator calculator = new Calculator();
+        int sum = calculator.add(7,3);
+        int substraction = calculator.substract(10, 6);
 
 
         if (sum==10) {

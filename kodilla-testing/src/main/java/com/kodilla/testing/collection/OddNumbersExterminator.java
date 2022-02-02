@@ -13,14 +13,18 @@ public class OddNumbersExterminator {
             temporaryValue= numbers.get(n);
             if (temporaryValue % 2==0) {
                 evenNumbers.add(temporaryValue);
-                return evenNumbers;
             }
         }
+        return evenNumbers;
+
         //List<Integer>evenNumbers=new ArrayList<>();
         //for (Integer evenNumber:numbers) {
             //if (evenNumber%2==0) {
                 //evenNumbers.add(evenNumber);
-                //return evenNumbers;
+
             //}
+        //}
+        //return evenNumbers;
+
     }
 }
