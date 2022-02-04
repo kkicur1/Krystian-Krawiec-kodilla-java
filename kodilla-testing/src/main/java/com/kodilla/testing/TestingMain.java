@@ -11,7 +11,7 @@ public class TestingMain {
         String result = simpleUser.getUsername();
 
         if (result.equals("theForumUser")) {
-            System.out.println("test OK");
+            System.out.println("test Forum User OK");
         } else {
             System.out.println("Error!");
         }
@@ -22,13 +22,13 @@ public class TestingMain {
 
 
         if (sum==10) {
-            System.out.println("test OK");
+            System.out.println("test calculator adding OK");
         } else {
             System.out.println("Error!");
         }
 
         if (substraction==4) {
-            System.out.println("test OK");
+            System.out.println("test calculator substraction OK");
         } else {
             System.out.println("Error!");
         }
