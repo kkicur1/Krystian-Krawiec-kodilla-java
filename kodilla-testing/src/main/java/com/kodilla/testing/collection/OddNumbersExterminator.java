@@ -21,9 +21,7 @@ public class OddNumbersExterminator {
         //for (Integer evenNumber:numbers) {
             //if (evenNumber%2==0) {
                 //evenNumbers.add(evenNumber);
-
             //}
-        //}
         //return evenNumbers;
 
     }

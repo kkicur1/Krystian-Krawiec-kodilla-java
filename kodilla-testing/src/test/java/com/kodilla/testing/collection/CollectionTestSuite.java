@@ -19,6 +19,7 @@ public class CollectionTestSuite {
     }
 
     @DisplayName("when you put empty list to method exterminate "+ "then it should return empty list")
+
     @Test
     void testOddNumbersExterminatorEmptyList() {
         //Given
@@ -31,6 +32,7 @@ public class CollectionTestSuite {
     }
 
     @DisplayName("when you put list to method exterminate with odd and even numbers"+ "then it should return list with even numbers")
+
     @Test
     void testOddNumbersExterminatorNormalList() {
         //Given
