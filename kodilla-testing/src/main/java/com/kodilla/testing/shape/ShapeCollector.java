@@ -27,11 +27,11 @@ public class ShapeCollector {
         //przejsc petla po liscie ksztaltow
         //skleic nazwy ksztaltow w jeden String i go zwrocic
 
-        String Figures=null;
+        String figures = "";
         for (Shape shapesFromList : shapes) {
-            Figures = Figures+ shapesFromList.getShapeName();
+            figures = figures+ shapesFromList.getShapeName();
         }
-        return Figures;
+        return figures;
     }
 
 }

@@ -48,10 +48,13 @@ public class ShapeCollectorTestSuite {
 
             //When
             Shape shape = new Triangle(10,5.0);
+            Shape shape1= new Circle(2.0);
+            shapeCollector.addFigure(shape);
+            shapeCollector.addFigure(shape1);
             shapeCollector.removeFigure(shape);
 
             //Then
-            Assertions.assertEquals(0, shapeCollector.getShapes().size());
+            Assertions.assertEquals(1, shapeCollector.getShapes().size());
         }
 
 
@@ -88,7 +91,7 @@ public class ShapeCollectorTestSuite {
             shapeCollector.showFigures();
 
             //Then
-            Assertions.assertEquals("nullSquareSquare", shapeCollector.showFigures());
+            Assertions.assertEquals("SquareSquare", shapeCollector.showFigures());
         }
 
     }
