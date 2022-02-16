@@ -8,6 +8,7 @@ public class BookLibrary {
     private LibraryDatabase libraryDatabase;
 
     public BookLibrary(LibraryDatabase libraryDatabase) {
+
         this.libraryDatabase = libraryDatabase;
     }
 
@@ -23,10 +24,6 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        List<Book> borrowedBookList= new ArrayList<>();
-        List<Book> resultList = libraryDatabase
-                .listBooksInHandsOf(libraryUser);
-        borrowedBookList=resultList;
-        return borrowedBookList;
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 }
