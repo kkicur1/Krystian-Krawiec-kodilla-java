@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Forum {
-    private final List<ForumUser>userList=new ArrayList<>();
+    private final List<ForumUser>userList= new ArrayList<>();
 
     public Forum() {
         userList.add(new ForumUser(1,"Krystian",'M', LocalDate.of(1989,12,15),2));
