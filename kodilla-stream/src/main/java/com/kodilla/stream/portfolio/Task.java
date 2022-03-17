@@ -1,6 +1,7 @@
 package com.kodilla.stream.portfolio;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public final class Task {
     private final String title;
@@ -41,6 +42,11 @@ public final class Task {
 
     public LocalDate getDeadline() {
         return deadline;
+    }
+
+    public int getNumberOfDays() {
+        Period period = Period.between(created, LocalDate.now());
+        return period.getDays();
     }
 
     @Override

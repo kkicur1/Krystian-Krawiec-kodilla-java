@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -96,7 +95,7 @@ public class BoardTestSuite {
         List<Task> tasks = project.getTaskLists().stream()
                 .flatMap(l->l.getTasks().stream())
                 .filter(t -> t.getAssignedUser().equals(user))
-        .collect(toList());
+                .collect(toList());
 
         //then
         assertEquals(2,tasks.size());
@@ -142,5 +141,37 @@ public class BoardTestSuite {
         //then
         assertEquals(2,longTasks);
 
+    }
+
+    @Test
+    void testAddTaskListAverageWorkingOnTask(){
+        //given
+        Board project = prepareTestData();
+
+        //when
+        List<TaskList> inProgressTasks= new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        double average = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(d-> d.getTasks().stream())
+                .mapToInt(Task::getNumberOfDays)
+                .average()
+                .orElse(0);
+        /*
+        long taskDuration= project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(d-> d.getTasks().stream())
+                .collect(Collectors.summingLong(Task::getNumberOfDays));
+
+        long taskNumber= project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(d-> d.getTasks().stream())
+                .count();
+
+        double result = (double) taskDuration / taskNumber;
+        */
+
+        //then
+        assertEquals(10, average);
     }
 }
