@@ -2,8 +2,7 @@ package com.kodilla.exception.io;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FileReaderTestSuite {
     @Test
@@ -25,5 +24,17 @@ public class FileReaderTestSuite {
         String fileName= "Nie ma takiego pliku txt.";
         //when&then
         assertThrows(FileReaderException.class, ()->fileReader.readFile(fileName));
+    }
+
+    @Test
+    void testReadFileWithName() {
+        //given
+        FileReader fileReader = new FileReader();
+        //when&then
+        assertAll(
+                ()-> assertThrows(FileReaderException.class, ()-> fileReader.readFile("nie_ma_takiego_pliku.txt")),
+                ()-> assertThrows(FileReaderException.class, ()-> fileReader.readFile(null)),
+                ()-> assertDoesNotThrow(()-> fileReader.readFile("names.txt"))
+        );
     }
 }
