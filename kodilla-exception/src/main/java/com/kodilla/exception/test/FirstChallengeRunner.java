@@ -9,7 +9,7 @@ public class FirstChallengeRunner {
         } catch (ArithmeticException e) {
             System.out.println("błąd dzielenia przez zero" +" "+ e);
         } finally {
-            System.out.println("Wprowadź kolejne liczby");
+            System.out.println("Zapraszamy ponownie");
         }
     }
 }

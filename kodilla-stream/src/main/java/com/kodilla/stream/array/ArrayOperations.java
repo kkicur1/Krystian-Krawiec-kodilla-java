@@ -17,3 +17,6 @@ public interface ArrayOperations {
         return result;
     }
 }
+
+//ctrl + shift + n - wyszukiwanie plikow po nazwie
+//ctrl + shoft + f - po tekscie
