@@ -76,25 +76,21 @@ final class Connections {
 
 class Flight {
 
-    String flightFrom;
-    String flightTo;
-    String flightVia;
-    Connections connections;
+    private String flightFrom;
+    private String flightTo;
 
-    /*
-    public List<String> findFlightFrom(String flightFrom) {
-        return;
+    public Flight(String flightFrom, String flightTo) {
+        this.flightFrom = flightFrom;
+        this.flightTo = flightTo;
     }
 
-    public List<String> findFlightTo(String flightTo) {
-        return;
+    public String getFlightFrom() {
+        return flightFrom;
     }
 
-
-    public List<String> findFlightVia(String flightTo, String flightTo) {
-        return;
+    public String getFlightTo() {
+        return flightTo;
     }
-    */
 }
 
 
